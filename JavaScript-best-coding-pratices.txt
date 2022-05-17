@@ -1,18 +1,21 @@
 Avoid Global Variables
+======================
 Minimize the use of global variables.
 
 This includes all data types, objects, and functions.
 
 Global variables and functions can be overwritten by other scripts.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 Use local variables instead, and learn how to use closures.
+===========================================================
 
 Always Declare Local Variables
 All variables used in a function should be declared as local variables.
 
 Local variables must be declared with the var keyword or the let keyword,or the const keyword, otherwise they will become global variables.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 Declarations on Top
+===================
 It is a good coding practice to put all declarations at the top of each script or function.
 
 This will:
@@ -21,3 +24,56 @@ Give cleaner code
 Provide a single place to look for local variables
 Make it easier to avoid unwanted (implied) global variables
 Reduce the possibility of unwanted re-declarations
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Initialize Variables
+====================
+It is a good coding practice to initialize variables when you declare them.
+
+This will:
+
+Give cleaner code
+Provide a single place to initialize variables
+Avoid undefined values
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Declare Objects and Arrays with const
+=====================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Don't Use new Object()
+======================
+Use "" instead of new String()
+Use 0 instead of new Number()
+Use false instead of new Boolean()
+Use {} instead of new Object()
+Use [] instead of new Array()
+Use /()/ instead of new RegExp()
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Beware of Automatic Type Conversions
+====================================
+JavaScript is loosely typed.
+
+A variable can contain all data types.
+
+A variable can change its data type:
+
+Example
+let x = "Hello";     // typeof x is a string
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Beware that numbers can accidentally be converted to strings or NaN (Not a Number).
+===================================================================================
+
+When doing mathematical operations, JavaScript can convert numbers to strings:
+
+Example
+let x = 5 + 7;       // x.valueOf() is 12,  typeof x is a number
+let x = 5 + "7";     // x.valueOf() is 57,  typeof x is a string
+let x = "5" + 7;     // x.valueOf() is 57,  typeof x is a string
+let x = 5 - 7;       // x.valueOf() is -2,  typeof x is a number
+let x = 5 - "7";     // x.valueOf() is -2,  typeof x is a number
+let x = "5" - 7;     // x.valueOf() is -2,  typeof x is a number
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Use === Comparison
+==================
+The == comparison operator always converts (to matching types) before comparison.
+
+The === operator forces comparison of values and type:
+
